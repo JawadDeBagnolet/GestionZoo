@@ -4,13 +4,28 @@ public class Animal {
     private String nom;
     private Integer age;
 
-    public Animal(Animal animal) {
-        this.nom= animal.getNom();
-        this.age= animal.getAge();
+    public Animal(String nom, Integer age) {
+        this.nom= nom;
+        this.age= age;
+    }
+
+    public String toString() {
+        return "Animal{" +
+                " nom : " + nom +
+                " age : " + age +
+                '}';
     }
 
     public void seDeplacer(){
         System.out.println(getNom()+" se déplace.");
+    }
+
+    public void manger(){
+        System.out.println(getNom()+" mange.");
+    }
+
+    public void faireDuBruit() {
+        System.out.println(getNom() + " fait du bruit.");
     }
 
     public Integer getAge() {

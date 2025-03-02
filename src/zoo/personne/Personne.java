@@ -1,5 +1,4 @@
-package personne;
-
+package zoo.personne;
 public class Personne {
     private String nomPrenom;
     private int age;
@@ -15,4 +14,19 @@ public class Personne {
                 '}';
     }
 
+    public String getNomPrenom() {
+        return nomPrenom;
+    }
+
+    public void setNomPrenom(String nomPrenom) {
+        this.nomPrenom = nomPrenom;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 }

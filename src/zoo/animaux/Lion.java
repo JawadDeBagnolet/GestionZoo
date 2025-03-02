@@ -3,8 +3,9 @@ package zoo.animaux;
 public class Lion extends Animal{
     private String couleurPelage;
     private int poids;
+    private String etat;
 
-    public Lion(String nom, Integer age, String couleurPelage, int poids) {
+    public Lion(String nom, Integer age, String couleurPelage, int poids, String etat) {
         super(nom, age);
         this.couleurPelage = couleurPelage;
         this.poids = poids;
@@ -16,7 +17,7 @@ public class Lion extends Animal{
     }
 
     public void afficherDetails() {
-        System.out.println("Nom: " + getNom() + ", Âge: " + getAge() + " ans, Couleur: " + getCouleurPelage() + ", Poids: " + getPoids() + " kg.");
+        System.out.println("Nom: '" + getNom() + "', Âge: " + getAge() + " ans, Couleur: " + getCouleurPelage() + ", Poids: " + getPoids() + " kg.");
     }
 
 
@@ -36,5 +37,13 @@ public class Lion extends Animal{
 
     public void setPoids(int poids) {
         this.poids = poids;
+    }
+
+    public String getEtat() {
+        return etat;
+    }
+
+    public void setEtat(String etat) {
+        this.etat = etat;
     }
 }

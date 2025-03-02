@@ -3,6 +3,7 @@ package zoo.animaux;
 public class Serpent extends Animal {
     private String couleurEcailles;
     private int poids;
+    private String etat;
 
     public Serpent(String nom, Integer age, String couleurEcailles,int poids) {
         super(nom, age);
@@ -33,5 +34,13 @@ public class Serpent extends Animal {
 
     public void setPoids(int poids) {
         this.poids = poids;
+    }
+
+    public String getEtat() {
+        return etat;
+    }
+
+    public void setEtat(String etat) {
+        this.etat = etat;
     }
 }

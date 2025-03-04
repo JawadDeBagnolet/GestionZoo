@@ -3,10 +3,12 @@ package zoo.animaux;
 public class Animal {
     private String nom;
     private Integer age;
+    private boolean malade;
 
     public Animal(String nom, Integer age) {
         this.nom= nom;
         this.age= age;
+        this.malade = false;
     }
 
     public String toString() {
@@ -44,4 +46,11 @@ public class Animal {
         this.nom = nom;
     }
 
+    public void isMalade() {
+        this.malade = true;
+    }
+
+    public void setMalade(boolean malade) {
+        this.malade = malade;
+    }
 }

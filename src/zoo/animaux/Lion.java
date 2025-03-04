@@ -3,7 +3,6 @@ package zoo.animaux;
 public class Lion extends Animal{
     private String couleurPelage;
     private int poids;
-    private String etat;
 
     public Lion(String nom, Integer age, String couleurPelage, int poids, String etat) {
         super(nom, age);
@@ -11,7 +10,7 @@ public class Lion extends Animal{
         this.poids = poids;
     }
 
-    // attribut propre au lion
+    // attributs propre au lion
     public void rugissement(){
         System.out.println("Le lion "+ getNom() +" rugit !");
     }
@@ -39,11 +38,4 @@ public class Lion extends Animal{
         this.poids = poids;
     }
 
-    public String getEtat() {
-        return etat;
-    }
-
-    public void setEtat(String etat) {
-        this.etat = etat;
-    }
 }

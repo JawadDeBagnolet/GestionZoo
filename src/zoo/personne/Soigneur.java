@@ -11,11 +11,15 @@ public class Soigneur extends Personne {
         this.specialite = specialite;
     }
 
+    public boolean pouvoirSoigner(Animal animal) {
+        return getSpecialite().equals(specialite);
+    }
+
     public void diagnostic() {
         int aleatoire = (int) (Math.random() * 2);  // Renvoie soit 0 soit 1
         System.out.println("Valeur aléatoire (0 ou 1) : " + aleatoire);
 
-        System.out.println("Le Soigneur"+getNomPrenom()+" diagnostique un "+getSpecialite() +" :");
+        System.out.println("Le Soigneur "+getNomPrenom()+" diagnostique un "+getSpecialite() +" :");
         if (aleatoire == 0) {
             System.out.println("L'animal " + getSpecialite() +" diagnostiqué est en bonne santé !");
         }
@@ -24,12 +28,23 @@ public class Soigneur extends Personne {
         }
     }
 
-    public void soigner(){
-        if (getEtat() == 1){
-            System.out.println("le soigneur "+getNomPrenom()+" vient soigner l'animal "+getSpecialite());
-        } else if (getEtat() == 0) {
+    public void soigner(Animal animal) {
+        if (!pouvoirSoigner(animal)) {
+            System.out.println("Le soigneur ne peut soigner que les animaux de sa spécialité.");
+            return;
+        }
+
+        if (animal.isMalade()) {
+            animal.setMalade(false);
+            System.out.println("Le soigneur " + getNomPrenom() + " vient soigner l'animal " + getSpecialite());
+        } else {
             System.out.println("Nul besoin de soigner un animal en bonne santé !");
         }
+    }
+
+    public void presentationDuShow(Animal animal) {
+        System.out.println(getNomPrenom() + " présente le spéctacle de " + animal.getNom() + " le "+getSpecialite() + " !");
+        animal.spectacle();
     }
 
     public String getSpecialite() {

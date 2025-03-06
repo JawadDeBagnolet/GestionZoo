@@ -18,6 +18,13 @@ public class Animal {
                 '}';
     }
 
+    public void spectacle() {
+        System.out.println(getNom()+" fait son Spectacle : ");
+        seDeplacer();
+        manger();
+        faireDuBruit();
+    }
+
     public void seDeplacer(){
         System.out.println(getNom()+" se déplace.");
     }
@@ -46,8 +53,9 @@ public class Animal {
         this.nom = nom;
     }
 
-    public void isMalade() {
+    public boolean isMalade() {
         this.malade = true;
+        return false;
     }
 
     public void setMalade(boolean malade) {
